@@ -3,48 +3,7 @@ package example;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Student {
-	private String name;
-	private String department;
-	private String id;
-	private double score;
-	private int rank;
-	
-	public Student(String name, String department, String id, double score) {
-		this.name = name;
-		this.department = department;
-		this.id = id;
-		this.score = score;		
-	}
-	
-	public String getName() {
-		return name;
-	}
-	public double getScore() {
-		return score;
-	}
-	public int getRank() {
-		return rank;
-	}
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
-	
-	public void searchStudentInfo() {
-		System.out.println(name + ", " + department + ", " + id + ", " + score + ", " + rank);
-	}
-	
-	public void showStudentInfo() {
-		System.out.println("이름 : " + name);
-		System.out.println("학과 : " + department);
-		System.out.println("학번 : " + id);
-		System.out.println("학점 : " + score);
-		System.out.println("등수 : " + rank);
-		System.out.println("------------------------------");
-	}
-}
-
-public class Ex4_1 {
+public class Ex4_1_Rank {
 	ArrayList<Student> studList = new ArrayList<Student>();
 	Scanner scanner = new Scanner(System.in);
 	
@@ -62,6 +21,12 @@ public class Ex4_1 {
 		}
 		System.out.println("----------------------------------------");
 	}
+	
+	// 학생의 등수를 계산
+	private void setRank() {
+		
+	}
+	
 	
 	// 학생 정보를 모두 출력
 	private void printAll() {
@@ -95,12 +60,13 @@ public class Ex4_1 {
 	
 	public void run() {
 		read();			// 학생 정보 입력
+		setRank();		// 학생 등수 계산
 		printAll();		// 학생 정보를 모두 출력
 		search();		// 학생 검색
 	}
 	
 	public static void main(String[] args) {
-		new Ex4_1().run();
+		new Ex4_1_Rank().run();
 	}
 
 }
